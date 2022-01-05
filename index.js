@@ -77,9 +77,14 @@ const runComparison = () => {
         const rightSideValue = parseInt(rightStat.dataset.value);
 
         if (rightSideValue > leftSideValue) {
+            leftStat.classList.remove('is-info');
             leftStat.classList.remove('is-primary');
             leftStat.classList.add('is-warning');
+        } else if (rightSideValue === leftSideValue) {
+            leftStat.classList.add('is-info');
+            rightStat.classList.add('is-info');
         } else {
+            rightStat.classList.remove('is-info');
             rightStat.classList.remove('is-primary');
             rightStat.classList.add('is-warning');
         }
